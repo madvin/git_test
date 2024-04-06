@@ -1,8 +1,5 @@
 div {
-    color: white;
-    background-color: black;
-}
-
-p {
-    color: red;
+    color: rgba(82, 10, 0, 0.801);
+    background-color: rgb(21, 255, 0);
+    font: comic;
 }
