@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+</body>
+
+<h1><input type="number" id="result" disabled></h1>
+<br>
+<input type="button" value="1" onclick="first()">
+<input type="button" value="2" onclick="second()">
+<input type="button" value="3" onclick="third()">
+<input type="button" value="4" onclick="fourth()">
+<input type="button" value="5" onclick="fifth()">
+<input type="button" value="6" onclick="sixth()">
+<input type="button" value="7" onclick="seventh()">
+<input type="button" value="8" onclick="eighth()">
+<input type="button" value="9" onclick="ninth()">
+<input type="button" value="0" onclick="zero()">
+<input type="button" value="C" onclick="del()">
+<input type="button" value="+" onclick="add()">
+<input type="button" value="-" onclick="substract()">
+<input type="button" value="*" onclick="multiply()">
+<input type="button" value="/" onclick="divide()">
+<input type="button" value="=" onclick="res()">
+
+
+
+
+
+
+<script>
+    var num1;
+    var num2;
+    var theOne;
+    var trigger = false;
+    var operation;
+    function first() {
+        document.getElementById("result").value += 1;
+    }
+    function second() {
+        document.getElementById("result").value += 2;
+    }
+    function third() {
+        document.getElementById("result").value += 3;
+    }
+    function fourth() {
+        document.getElementById("result").value += 4;
+    }
+    function fifth() {
+        document.getElementById("result").value += 5;
+    }
+    function sixth() {
+        document.getElementById("result").value += 6;
+    }
+    function seventh() {
+        document.getElementById("result").value += 7;
+    }
+    function eighth() {
+        document.getElementById("result").value += 8;
+    }
+    function ninth() {
+        document.getElementById("result").value += 9;
+    }
+    function zero() {
+        document.getElementById("result").value += 0;
+    }
+    function del() {
+        document.getElementById("result").value = null;
+        num1 = null;
+        num2 = null;
+        theOne = null;
+        trigger = false;
+        operation = null;
+    }
+    function add() {
+        if (trigger) {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 + num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+            operation == "+";
+        } else {
+            num1 = parseFloat(document.getElementById("result").value);
+            document.getElementById("result").value = null;
+            trigger = true;
+        }
+    }
+    function substract() {
+        if (trigger) {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 - num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+            operation = "-";
+        } else {
+            num1 = parseFloat(document.getElementById("result").value);
+            document.getElementById("result").value = null;
+            trigger = true;
+        }
+    }
+
+    function multiply() {
+        if (trigger) {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 * num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+            operation = "*";
+        } else {
+            num1 = parseFloat(document.getElementById("result").value);
+            document.getElementById("result").value = null;
+            trigger = true;
+        }
+    }
+
+    function divide() {
+        if (trigger) {
+            num2 = parseFloat(document.getElementById("result").value);
+            if (num2 == 0) {
+                alert: "Cannot divide on zero"
+            }
+            theOne = num1 / num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+            operation = "/";
+        } else {
+            num1 = parseFloat(document.getElementById("result").value);
+            document.getElementById("result").value = null;
+            trigger = true;
+        }
+    }
+    function res() {
+        if (operation === "+") {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 + num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+        } else if (operation === "-") {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 - num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+        } else if (operation === "*") {
+            num2 = parseFloat(document.getElementById("result").value);
+            theOne = num1 * num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+        } else if (operation == "/") {
+            num2 = parseFloat(document.getElementById("result").value);
+            if (num2 == 0) {
+                alert("Cannot divide on zero")
+            }
+            theOne = num1 / num2;
+            document.getElementById("result").value = theOne;
+            trigger = false;
+        }
+    }
+
+</script>
+
+</html>
