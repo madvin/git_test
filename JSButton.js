@@ -12,5 +12,5 @@ function onButtonClick() {
   
   newButton.addEventListener('click', () => {
     alert('New button clicked!');
-    console.log(alert);
+    console.log();
   });

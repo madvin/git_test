@@ -1,0 +1,11 @@
+function broi() {
+    let number = 10;
+    console.log(typeof number);
+}
+function nebroi() {
+   if (typeof null) {
+    console.log('ti si ne4ovek 4ove4eeeeee')
+   }
+}
+broi();
+nebroi();
